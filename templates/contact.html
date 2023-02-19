@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+@import url('https://fonts.gooleapis.com/css?family=Poppins:400,500,600,700,800&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font- family: 'poppins',sans-serif;
+}
+body
+{
+height: 120vh;
+margin-top: 80px;
+padding: 30px;
+	display: flex;
+	justify-content: center;
+	align-item:center;
+	background: #03080a;
+}
+.container
+{
+	width: 80%;
+	padding: 20px;
+}
+.container h2
+{
+	width: 100%;
+	color: #45f3ff;
+	font-size: 36px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.container .row100
+{
+	position: relative;
+	width: 100%;
+	dispaly: grid;
+	grid-template-columns: repeat(autofit,minmax(300px,1fr));
+}
+.container .row100 .col
+{
+	position: relative;
+	width: 100%;
+	padding: 0 10px;
+	margin: 30px 0 10px;
+	transition: 0.5s;
+
+}
+.container .row100 .inputBox
+{
+	position:relative;
+	width:100%;
+	height: 40px;
+	color: #45f3ff;
+}
+.container .row100 .inputBox input,
+.container .row100 .inputBox.textarea textarea
+{
+	position: absolute;
+	width:100%;
+	height:100%;
+	background: transparent;
+	box-shadow: none;
+	border: none;
+	outline:none ;
+	font-size: 18 px;
+	padding: 0 10px;
+	z-index: 1;
+	color: #000;
+}
+.container .row100 .inputBox .text
+
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	line-height:40px;
+	font-size: 18px;
+	padding: 0 10px;
+	display: block;
+	transition: 0.5s;
+	pointer-events: none;
+}
+.container .row100 .inputBox input:focus + .text,
+.container .row100 .inputBox input:valid + .text
+{
+	top: -35px;
+	left: -10px;
+}
+.container .row100 .inputBox .line
+{
+   position: absolute;
+   bottom:0;
+   display: block;
+   width: 100%;
+   height: 2px;
+   background: #45f3ff;
+   transition: 0.5s;
+   border-radius: 2px;
+   pointer-events: none;
+}
+
+.container .row100 .inputBox input:focus ~ .line,
+.container .row100 .inputBox input:valid ~ .line
+{
+	height: 100%;
+}
+.container .row100 .inputBox.textarea
+{
+	position:relative;
+	width: 100%;
+	height:100px;
+	padding: 10px 0;
+}
+
+.container .row100 .inputBox input: focus + .text,
+.container .row100 .inputBox input: valid + .text
+{
+	top: -35px;
+	left: -10px;
+}
+.container .row100 .inputBox .line
+{
+   position: absolute;
+   bottom:0;
+   display: block;
+   width: 100%;
+   height: 2px;
+   background: #45f3ff;
+   transition: 0.5s;
+   border-radius: 2px;
+   pointer-events: none;
+}
+.container .row100 .inputBox input: focus ~ .line,
+.container .row100 .inputBox input: valid ~ .line
+{
+	height:100%;
+}
+.container .row100 .inputBox.textarea
+{
+	position: relative;
+	width: 100%;
+	height:100 px;
+	padding: 10px 0;
+}
+.container .row100 .inputBox.textarea textarea
+{
+	height: 100%;
+	resize:none;
+}
+
+.container .row100 .inputBox textarea: focus + .text,
+.container .row100 .inputBox textarea: valid + .text,
+{
+	top: -35px;
+	left: -10px;
+}
+.container .row100 .inputBox textarea: focus ~ .line,
+.container .row100 .inputBox textarea: valid ~ .line
+{
+	height:100%;
+}
+input[type="submit"]
+{
+
+	border:none;
+	padding: 7px 35px;
+	cursor: pointer;
+	outline: none;
+	background: #45f3ff;
+	color: #000;
+	font-size: 18px;
+	border-radius:2px;
+}
+
+
+header {
+background-color:#45f3ff;
+position: fixed;
+left: 0;
+right: 0;
+top: 0px;
+padding: 30px;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  border-radius:25px;
+}
+header * {
+display: inline;
+color:white;
+}
+header li {
+margin: 20px;
+}
+header li a {
+color: black;
+text-decoration: none;
+}
+button {
+  font-size: 13px;
+  color:pink;
+}
+
+.glow {
+  font-size: 30px;
+  color: #45f3ff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+.glow {
+  font-size: 30px;
+  color: #128;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+
+input[type=submit]:hover {
+  background-color: #256;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #256;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body >
+<header>
+<nav>
+<ul>
+<li>
+<a href="http://127.0.0.1:8000" > Home </a>
+</li>
+<li>
+<a href="http://127.0.0.1:8000/inx"> Student </a>
+</li>
+<li>
+<a href="http://127.0.0.1:8000/login"> Admin </a>
+</ul>
+</nav>
+</header>
+<br>
+<br>
+<br>
+<div class="container">
+  <div style="text-align:center">
+    <h2 class="glow">Contact Us</h2>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img src="https://th.bing.com/th?q=Feedback+Pic&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.4&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247" style="width:100%">
+    </div>
+    <div class="column">
+      <form action="/thnx">
+
+          <div class="container">
+ <div class="row100">
+	<div class="col">
+		<div class="inputBox">
+			<input type="text" name="first name" required="required">
+			<span class="text">First Name</span>
+			<span class="line"></span>
+		</div>
+	</div>
+</div>
+ <div class="row100">
+	<div class="col">
+		<div class="inputBox">
+			<input type="text" name="last name" required="required">
+			<span class="text">Last Name</span>
+			<span class="line"></span>
+		</div>
+	</div>
+</div>
+
+<div class="row100">
+	<div class="col">
+		<div class="inputBox">
+			<input type="text" name="e-mail" required="required">
+			<span class="text">E-mail</span>
+			<span class="line"></span>
+		</div>
+	</div>
+</div>
+<div class="row100">
+	<div class="col">
+		<div class="inputBox">
+			<input type="text" name="phone number" required="required">
+			<span class="text">Phone No</span>
+			<span class="line"></span>
+		</div>
+	</div>
+</div>
+<div class="row100">
+	<div class="col">
+		<div class="inputBox">
+			<input type="text" name="address" required="required">
+			<span class="text">Address</span>
+			<span class="line"></span>
+		</div>
+	</div>
+</div>
+<div class="row100">
+	<div class="col">
+		<input align="center" type="submit" value="Send">
+	</div>
+</div>
+
+</div>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

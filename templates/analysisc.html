@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>C course</title>
+    <style>
+      .chartMenu {
+        width: 100vw;
+        height: 40px;
+        background: #45f3ff;
+        color: rgba(0, 0, 0, 1);
+        	border-radius: 25px;
+
+      }
+      .chartMenu1 {
+        width: 100vw;
+        height: 50px;
+         background: #45f3ff;
+        color: rgba(54, 162, 235, 1);
+        	border-radius: 25px;
+
+      }
+      .chartMenu1 p {
+       padding: 10px;
+        font-size: 30px;
+        	border-radius: 25px;
+
+      }
+      .chartMenu p {
+        padding: 10px;
+        font-size: 20px;
+        	border-radius: 25px;
+
+      }
+      .chartCard {
+        width: 100vw;
+        height: calc(50vh - 15px);
+        background: rgba(54, 162, 235, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .chartCard1 {
+        width: 100vw;
+        height: calc(50vh - 15px);
+        background: rgba(54, 162, 235, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .chartBox {
+        width: 250px;
+        padding: 20px;
+        border-radius: 20px;
+        border: solid 3px rgba(54, 162, 235, 1);
+        background: white;
+      }
+      <canvas id="myChart1" style="width:100%;max-width:600px"></canvas>
+
+@import url('https://fonts.gooleapis.com/css?family=Poppins:400,500,600,700,800&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font- family: 'poppins',sans-serif;
+	border-radius: 25px;
+}
+body
+{
+height: 120vh;
+margin-top: 100px;
+padding: 30px;
+	display: flex;
+	justify-content: center;
+	align-item:center;
+	background: #256;
+}
+.container
+{
+	width: 80%;
+	padding: 20px;
+}
+.container h2
+{
+	width: 100%;
+	color: #45f3ff;
+	font-size: 36px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+header {
+background-color:#45f3ff;
+position: fixed;
+left: 0;
+right: 0;
+top: 0px;
+padding: 30px;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  	border-radius: 25px;
+
+}
+header * {
+display: inline;
+color:white;
+}
+header li {
+margin: 20px;
+}
+header li a {
+color: black;
+text-decoration: none;
+}
+button {
+  font-size: 13px;
+  color:pink;
+}
+
+.glow {
+  font-size: 50px;
+  color: #45f3ff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+.glowsub {
+  font-size: 15px;
+  color: #45f3ff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+
+</style>
+  <body >
+<header>
+<nav>
+<ul>
+<li>
+<a href="http://127.0.0.1:8000/any"> Home </a>
+</li>
+<li>
+<a href="http://127.0.0.1:8000/dd">Download Data</a>
+</li>
+    <li>
+<a href="http://127.0.0.1:8000/txtrpt">Download Report</a>
+</li>
+<li>
+<a href="http://127.0.0.1:8000">Logout</a>
+</li>
+</ul>
+</nav>
+</header>
+<br><br><br>
+    <section>
+    <h1 style="font-size:50px" class="glow">Welcome &#128525</h1>
+        </script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+        <div class="chartMenu1" align="center">
+        <p align="center"  style="color:#000">Feedback Statistics of <b>C Programming</b></p>
+    </div>
+    <div class="chartCard1">
+      <div class="chartBox">
+        <canvas id="myChartA"></canvas>
+      </div>&emsp;&emsp;&emsp;
+      <div class="chartBox">
+        <canvas id="myChartPieA"></canvas>
+      </div>&emsp;
+        <div class="chartBox">
+            <h2>Total Feedbacks:{{total_feedbacks}}</h2>
+            <h4>Positives:{{total_positive_feedbacks}}({{ttlp}}%)</h4>
+            <h4>Negatives:{{total_negative_feedbacks}}({{ttln}}%)</h4>
+            <h4>Neutral:{{total_neutral_feedbacks}}({{ttlpn}}%)</h4>
+        </div>
+    </div>
+    <script>
+
+    // setup
+    const dataA = {
+      labels: ['Positive','Negative','Neutral'],
+      datasets: [{
+        label: 'Total Course Feedback',
+        data: [{{total_positive_feedbacks}},{{total_negative_feedbacks}},{{total_neutral_feedbacks}}],
+        backgroundColor: [
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 26, 104, 0.5)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+
+    // config
+    const configA= {
+      type: 'bar',
+      data:dataA,
+      options: {
+      aspectRatio:1,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    };
+
+    // render init block
+    const myChartA= new Chart(
+      document.getElementById('myChartA'),
+      configA
+    );
+    // setup line
+
+    // setup chart
+    const dataPieA= {
+      labels: ['Positive','Negative','Neutral'],
+      datasets: [{
+        label: 'Total Course Feedback',
+        data: [{{total_positive_feedbacks}},{{total_negative_feedbacks}},{{total_neutral_feedbacks}}],
+       backgroundColor: [
+           'rgba(54, 162, 235, 1)',
+          'rgba(255, 26, 104, 0.6)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // config
+    const configPieA= {
+      type: 'doughnut',
+      data:dataPieA,
+      options: {
+
+      }
+    };
+
+    // render init block
+    const myChartPieA= new Chart(
+      document.getElementById('myChartPieA'),
+      configPieA
+    );
+
+    </script>
+
+
+    <div class="chartMenu">
+        <p align="center">1.Course Expertise Statistics </p>
+    </div>
+    <div class="chartCard">
+      <div class="chartBox">
+        <canvas id="myChart"></canvas>
+      </div>
+    &emsp;&emsp;&emsp;
+
+      <div class="chartBox">
+        <canvas id="myChartPie"></canvas>
+      </div>    &emsp;&emsp;&emsp;
+
+         <div class="chartBox">
+            <h2>Total Feedbacks:{{dft}}</h2>
+            <h4>Positives:{{teaching_positive_count}}({{tp}}%)</h4>
+            <h4>Negatives:{{teaching_negative_count}}({{tn}}%)</h4>
+            <h4>Neutral:{{teaching_neutral_count }}({{tpn}}%)</h4>
+        </div>
+    </div>
+
+    <script>
+
+    // setup
+    const data = {
+      labels: ['Positive','Negative','Neutral'],
+      datasets: [{
+        label: 'Course Expertise Feedback',
+        data: [{{teaching_positive_count}},{{teaching_negative_count}},{{teaching_neutral_count}}],
+        backgroundColor: [
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 26, 104, 0.6)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // config
+    const config = {
+      type: 'bar',
+      data,
+      options: {
+      aspectRatio:1,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    };
+
+    // render init block
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+    // setup line
+
+    // setup chart
+    const dataPie = {
+      labels: ['Positive','Negative','Neutral'],
+      datasets: [{
+        label: 'Course Expertise Feedback',
+        data: [{{teaching_positive_count}},{{teaching_negative_count}},{{teaching_neutral_count}}],
+        backgroundColor: [
+           'rgba(54, 162, 235, 1)',
+          'rgba(255, 26, 104, 0.6)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // config
+    const configPie = {
+      type: 'doughnut',
+      data:dataPie,
+      options: {
+
+      }
+    };
+
+    // render init block
+    const myChartPie = new Chart(
+      document.getElementById('myChartPie'),
+      configPie
+    );
+
+    </script>
+
+
+
+<div class="chartMenu">
+        <p align="center">2.Course Contents Feedback Statistics</p>
+    </div>
+    <div class="chartCard">
+      <div class="chartBox">
+        <canvas id="myChart1"></canvas>
+      </div>
+
+          &emsp;&emsp;&emsp;
+      <div class="chartBox">
+        <canvas id="myChartPie1"></canvas>
+      </div>
+            &emsp;&emsp;&emsp;
+
+         <div class="chartBox">
+            <h2>Total Feedbacks:{{dfc}}</h2>
+            <h4>Positives:{{coursecontent_positive_count}}({{cp}}%)</h4>
+            <h4>Negatives:{{coursecontent_negative_count}}({{cn}}%)</h4>
+            <h4>Neutral:{{coursecontent_neutral_count}}({{cpn}}%)</h4>
+        </div>
+    </div>
+    <script>
+
+    // setup
+    const data1 = {
+      labels: ['Positive','Negative','Neutral'],
+      datasets: [{
+        label: 'Course Contents Feedbacks',
+        data: [{{coursecontent_positive_count}},{{coursecontent_negative_count}},{{coursecontent_neutral_count}}],
+        backgroundColor: [
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 26, 104, 0.6)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // config
+    const config1 = {
+      type: 'bar',
+      data:data1,
+      options: {
+      aspectRatio:1,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    };
+
+    // render init block
+    const myChart1 = new Chart(
+      document.getElementById('myChart1'),
+      config1
+    );
+    // setup line
+
+    // setup chart
+    const dataPie1 = {
+      labels: ['Positive','Negative','Neutral'],
+      datasets: [{
+        label: 'Course Contents Feedback',
+        data: [{{coursecontent_positive_count}},{{coursecontent_negative_count}},{{coursecontent_neutral_count}}],
+        backgroundColor: [
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 26, 104, 0.6)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // config
+    const configPie1 = {
+      type: 'doughnut',
+
+      data:dataPie1,
+      options: {
+
+      }
+    };
+
+    // render init block
+    const myChartPie1 = new Chart(
+      document.getElementById('myChartPie1'),
+      configPie1
+    );
+
+    </script>
+
+
+ <div class="chartMenu">
+        <p align="center">3.Examinations Feedback Statistics</p>
+    </div>
+    <div class="chartCard">
+      <div class="chartBox">
+        <canvas id="myChart3"></canvas>
+      </div>
+    &emsp;&emsp;&emsp;
+
+      <div class="chartBox">
+        <canvas id="myChartPie3"></canvas>
+      </div>&emsp;&emsp;&emsp;
+         <div class="chartBox">
+            <h2>Total Feedbacks:{{dfe}}</h2>
+            <h4>Positives:{{examination_positive_count}}({{exp}}%)</h4>
+            <h4>Negatives:{{examination_negative_count}}({{exn}}%)</h4>
+            <h4>Neutral:{{examination_neutral_count}}({{expn}}%)</h4>
+        </div>
+    </div>
+    <script>
+
+    // setup
+    const data3 = {
+      labels: ['Positive','Negative','Neutral'],
+      datasets: [{
+        label: 'Examinations & Assessments Feedback',
+        data: [{{examination_positive_count}},{{examination_negative_count}},{{examination_neutral_count}}],
+        backgroundColor: [
+           'rgba(54, 162, 235, 1)',
+          'rgba(255, 26, 104, 0.6)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // config
+    const config3 = {
+      type: 'bar',
+      data:data3,
+      options: {
+      aspectRatio:1,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    };
+
+    // render init block
+    const myChart3= new Chart(
+      document.getElementById('myChart3'),
+      config3
+    );
+    // setup line
+
+    // setup chart
+    const dataPie3 = {
+      labels: ['Positive','Negative','Neutral'],
+      datasets: [{
+        label: 'Examinations & Assessments Feedback',
+        data: [{{examination_positive_count}},{{examination_negative_count}},{{examination_neutral_count}}],
+        backgroundColor: [
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 26, 104, 0.6)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // config
+    const configPie3 = {
+      type: 'doughnut',
+      data:dataPie3,
+      options: {
+
+      }
+    };
+
+    // render init block
+    const myChartPie3 = new Chart(
+      document.getElementById('myChartPie3'),
+      configPie3
+    );
+
+    </script>
+
+
+
+ <div class="chartMenu">
+        <p align="center">4.Lab Infrastructure Feedback Statistics </p>
+    </div>
+    <div class="chartCard">
+      <div class="chartBox">
+        <canvas id="myChart4"></canvas>
+      </div>
+    &emsp;&emsp;&emsp;
+
+      <div class="chartBox">
+        <canvas id="myChartPie4"></canvas>
+      </div>&emsp;&emsp;&emsp;
+         <div class="chartBox">
+            <h2>Total Feedbacks:{{dfl}}</h2>
+            <h4>Positives:{{labwork_positive_count}}({{lbp}}%)</h4>
+            <h4>Negatives:{{labwork_negative_count}}({{lbn}}%)</h4>
+            <h4>Neutral:{{labwork_neutral_count}}({{lbpn}}%)</h4>
+        </div>
+    </div>
+    <script>
+
+    // setup
+    const data4 = {
+      labels: ['Positive','Negative','Neutral'],
+      datasets: [{
+        label: 'Lab_Work Feedback',
+        data: [{{labwork_positive_count}},{{labwork_negative_count}},{{labwork_neutral_count}}],
+        backgroundColor: [
+         'rgba(54, 162, 235, 1)',
+          'rgba(255, 26, 104, 0.6)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // config
+    const config4 = {
+      type: 'bar',
+      data:data4,
+      options: {
+      aspectRatio:1,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    };
+
+    // render init block
+    const myChart4= new Chart(
+      document.getElementById('myChart4'),
+      config4
+    );
+    // setup line
+
+    // setup chart
+    const dataPie4 = {
+      labels: ['Positive','Negative','Neutral'],
+      datasets: [{
+        label: 'Lab_Work Feedback',
+        data: [{{labwork_positive_count}},{{labwork_negative_count}},{{labwork_neutral_count}}],
+        backgroundColor: [
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 26, 104, 0.6)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // config
+    const configPie4 = {
+      type: 'doughnut',
+      data:dataPie4,
+      options: {
+
+      }
+    };
+
+    // render init block
+    const myChartPie4 = new Chart(
+      document.getElementById('myChartPie4'),
+      configPie4
+    );
+
+    </script>
+
+
+
+ <div class="chartMenu">
+        <p align="center">5.Library Facilities Feedback Statistics </p>
+    </div>
+    <div class="chartCard">
+      <div class="chartBox">
+        <canvas id="myChart5"></canvas>
+      </div>
+    &emsp;&emsp;&emsp;
+
+      <div class="chartBox">
+        <canvas id="myChartPie5"></canvas>
+      </div>&emsp;&emsp;&emsp;
+         <div class="chartBox">
+            <h2>Total Feedbacks:{{dfll}}</h2>
+            <h4>Positives:{{libraryfacilities_positive_count}}({{lbrp}}%)</h4>
+            <h4>Negatives:{{libraryfacilities_negative_count}}({{lbrn}}%)</h4>
+            <h4>Neutral:{{libraryfacilities_neutral_count}}({{lbrpn}}%)</h4>
+        </div>
+    </div>
+    <script>
+
+    // setup
+    const data5 = {
+      labels: ['Positive','Negative','Neutral'],
+      datasets: [{
+        label: 'Library Facilities Feedback',
+        data: [{{libraryfacilities_positive_count}},{{libraryfacilities_negative_count}},{{libraryfacilities_neutral_count}}],
+        backgroundColor: [
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 26, 104, 0.6)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // config
+    const config5 = {
+      type: 'bar',
+      data:data5,
+      options: {
+      aspectRatio:1,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    };
+
+    // render init block
+    const myChart5= new Chart(
+      document.getElementById('myChart5'),
+      config5
+    );
+    // setup line
+
+    // setup chart
+    const dataPie5 = {
+      labels: ['Positive','Negative','Neutral'],
+      datasets: [{
+        label: 'Library Facilities Feedback',
+        data: [{{libraryfacilities_positive_count}},{{libraryfacilities_negative_count}},{{libraryfacilities_neutral_count}}],
+        backgroundColor: [
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 26, 104, 0.6)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // config
+    const configPie5 = {
+      type: 'doughnut',
+      data:dataPie5,
+      options: {
+
+      }
+    };
+
+    // render init block
+    const myChartPie5 = new Chart(
+      document.getElementById('myChartPie5'),
+      configPie5
+    );
+
+    </script>
+
+
+<div class="chartMenu">
+        <p align="center">6.Co-curricular Feedback Statistics</p>
+    </div>
+    <div class="chartCard">
+      <div class="chartBox">
+        <canvas id="myChart6"></canvas>
+      </div>
+&emsp;&emsp;&emsp;
+
+      <div class="chartBox">
+        <canvas id="myChartPie6"></canvas>
+      </div>&emsp;&emsp;&emsp;
+         <div class="chartBox">
+            <h2>Total Feedbacks:{{dfco}}</h2>
+            <h4>Positives:{{extracurricular_positive_count}}({{cop}}%)</h4>
+            <h4>Negatives:{{extracurricular_negative_count}}({{con}}%)</h4>
+            <h4>Neutral:{{extracurricular_neutral_count}}({{copn}}%)</h4>
+        </div>
+    </div>
+    <script>
+
+    // setup
+    const data6 = {
+      labels: ['Positive','Negative','Neutral'],
+      datasets: [{
+        label: 'Co-curricular Feedback',
+        data: [{{extracurricular_positive_count}},{{extracurricular_negative_count}},{{extracurricular_neutral_count}}],
+        backgroundColor: [
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 26, 104, 0.6)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // config
+    const config6= {
+      type: 'bar',
+      data:data6,
+      options: {
+      aspectRatio:1,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    };
+
+    // render init block
+    const myChart6= new Chart(
+      document.getElementById('myChart6'),
+      config6
+    );
+    // setup line
+    const dataLine6 = {
+      labels: ['Positive','Negative','Neutral'],
+      datasets: [{
+        label: 'Co-curricular Feedback',
+        data: [{{extracurricular_positive_count}},{{extracurricular_negative_count}},{{extracurricular_neutral_count}}],
+        backgroundColor: [
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 26, 104, 0.6)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // config
+    const configLine6= {
+      type: 'line',
+      data:dataLine6,
+      options: {
+      aspectRatio:1,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    };
+
+    // render init block
+    const myChartLine6= new Chart(
+      document.getElementById('myChartLine6'),
+      configLine6
+    );
+
+    // setup chart
+    const dataPie6= {
+      labels: ['Positive','Negative','Neutral'],
+      datasets: [{
+        label: 'Co-curricular Feedback',
+        data: [{{extracurricular_positive_count}},{{extracurricular_negative_count}},{{extracurricular_neutral_count}}],
+        backgroundColor: [
+           'rgba(54, 162, 235, 1)',
+          'rgba(255, 26, 104, 0.6)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // config
+    const configPie6 = {
+      type: 'doughnut',
+      data:dataPie6,
+      options: {
+
+      }
+    };
+
+    // render init block
+    const myChartPie6 = new Chart(
+      document.getElementById('myChartPie6'),
+      configPie6
+    );
+
+    </script>
+</section>
+</body>
+</html>

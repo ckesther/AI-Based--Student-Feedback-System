@@ -1,0 +1,27 @@
+PYTHON COURSE REPORT
+
+Total Feedbacks:1566
+TEACHING:
+   Positive:107
+   Negative:102
+   Neutral:52
+COURSE CONTENT:
+   Positive:123
+   Negative:96
+   Neutral:42
+EXAMINATIONS:
+   Positive:111
+   Negative:106
+   Neutral:44
+LAB_WORK:
+   Positive:117
+   Negative:94
+   Neutral:49
+LIBRARY:
+   Positive:128
+   Negative:95
+   Neutral:38
+CO-CURRICULAR:
+   Positive:130
+   Negative:81
+   Neutral:50
